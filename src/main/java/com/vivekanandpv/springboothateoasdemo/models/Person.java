@@ -5,16 +5,24 @@ import org.springframework.hateoas.RepresentationModel;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Greeting extends RepresentationModel<Greeting> {
+public class Person extends RepresentationModel<Person> {
 
-    private final String content;
+    private final String firstName;
+    private final String lastName;
 
-    @JsonCreator
-    public Greeting(@JsonProperty("content") String content) {
-        this.content = content;
+    public Person(
+            String firstName,
+            String lastName
+    ) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public String getContent() {
-        return content;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 }
